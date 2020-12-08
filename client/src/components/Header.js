@@ -23,9 +23,6 @@ const Header = () => {
             <LinkContainer to="/faq">
               <Nav.Link>FAQ</Nav.Link>
             </LinkContainer>
-            <LinkContainer to="/contact">
-              <Nav.Link>Contact</Nav.Link>
-            </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto">

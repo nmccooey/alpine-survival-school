@@ -1,6 +1,5 @@
 const courses = [
   {
-    _id: "1",
     name: "Desert Beginner",
     image: "/images/desert-card.png",
     description: "Learn basic survival skills in the hot desert environment.",
@@ -11,7 +10,6 @@ const courses = [
     date: "March 2020",
   },
   {
-    _id: "2",
     name: "Tundra Beginner",
     image: "/images/tundra-card.png",
     description: "Learn basic survival skills in the cold tundra environment.",
@@ -22,7 +20,6 @@ const courses = [
     date: "October 2020",
   },
   {
-    _id: "3",
     name: "Tropical Beginner",
     image: "/images/tropical-card.png",
     description:
@@ -34,7 +31,6 @@ const courses = [
     date: "May 2021",
   },
   {
-    _id: "4",
     name: "Desert Intermediate",
     image: "/images/desert-card.png",
     description: "Learn basic survival skills in the hot desert environment.",
@@ -45,7 +41,6 @@ const courses = [
     date: "April 2021",
   },
   {
-    _id: "5",
     name: "Tundra Intermediate",
     image: "/images/tundra-card.png",
     description: "Learn basic survival skills in the cold tundra environment.",
@@ -56,7 +51,6 @@ const courses = [
     date: "November 2020",
   },
   {
-    _id: "6",
     name: "Tropical Intermediate",
     image: "/images/tropical-card.png",
     description:
@@ -68,7 +62,6 @@ const courses = [
     date: "June 2021",
   },
   {
-    _id: "7",
     name: "Desert Advanced",
     image: "/images/desert-card.png",
     description: "Learn basic survival skills in the hot desert environment.",
@@ -79,7 +72,6 @@ const courses = [
     date: "June 2021",
   },
   {
-    _id: "8",
     name: "Tundra Advanced",
     image: "/images/tundra-card.png",
     description: "Learn basic survival skills in the cold tundra environment.",
@@ -90,7 +82,6 @@ const courses = [
     date: "December 2020",
   },
   {
-    _id: "9",
     name: "Tropical Advanced",
     image: "/images/tropical-card.png",
     description:
