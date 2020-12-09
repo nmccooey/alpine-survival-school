@@ -1,29 +1,37 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { listCourses } from "../actions/courseActions";
 import { Row, Col } from "react-bootstrap";
 import Course from "../components/Course";
+import Message from "../components/Message";
+import Loader from "../components/Loader";
 
 const HomeScreen = () => {
-  const [courses, setCourses] = useState([]);
+  const dispatch = useDispatch();
+
+  const courseList = useSelector((state) => state.courseList);
+  const { loading, error, courses } = courseList;
 
   useEffect(() => {
-    const fetchCourses = async () => {
-      const { data } = await axios.get("/api/courses");
-      setCourses(data);
-    };
-    fetchCourses();
-  }, []);
+    dispatch(listCourses());
+  }, [dispatch]);
 
   return (
     <>
-      <h1>Courses</h1>
-      <Row>
-        {courses.map((course) => (
-          <Col key={course._id} sm={12} md={8} lg={4} xl={3}>
-            <Course course={course} />
-          </Col>
-        ))}
-      </Row>
+      <h1>Our Courses</h1>
+      {loading ? (
+        <Loader />
+      ) : error ? (
+        <Message variant="danger">{error}</Message>
+      ) : (
+        <Row>
+          {courses.map((course) => (
+            <Col key={course._id} sm={12} md={6} lg={4} xl={3}>
+              <Course course={course} />
+            </Col>
+          ))}
+        </Row>
+      )}
     </>
   );
 };
