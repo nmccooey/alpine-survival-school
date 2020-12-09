@@ -8,8 +8,8 @@ main {
   text-align: justify;
 }
 
-.navbar a {
-  color: white;
+.white {
+  color: white !important;
 }
 
 .navbar a:hover {
