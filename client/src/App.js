@@ -7,6 +7,7 @@ import AboutScreen from "./screens/AboutScreen";
 import FaqScreen from "./screens/FaqScreen";
 import HomeScreen from "./screens/HomeScreen";
 import CourseScreen from "./screens/CourseScreen";
+import LoginScreen from "./screens/LoginScreen";
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
       <Header />
       <main className="py-3">
         <Container>
+          <Route path="/login" component={LoginScreen} />
           <Route path="/" component={HomeScreen} exact />
           <Route path="/course/:id" component={CourseScreen} />
           <Route path="/about" component={AboutScreen} exact />
