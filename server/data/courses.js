@@ -8,6 +8,7 @@ const courses = [
     category: "Beginner",
     price: 749.95,
     date: "March 2020",
+    slotsInStock: 3,
   },
   {
     name: "Tundra Beginner",
@@ -18,6 +19,7 @@ const courses = [
     category: "Beginner",
     price: 749.95,
     date: "October 2020",
+    slotsInStock: 3,
   },
   {
     name: "Tropical Beginner",
@@ -29,6 +31,7 @@ const courses = [
     category: "Beginner",
     price: 749.95,
     date: "May 2021",
+    slotsInStock: 3,
   },
   {
     name: "Desert Intermediate",
@@ -39,6 +42,7 @@ const courses = [
     category: "Intermediate",
     price: 1249.95,
     date: "April 2021",
+    slotsInStock: 3,
   },
   {
     name: "Tundra Intermediate",
@@ -49,6 +53,7 @@ const courses = [
     category: "Intermediate",
     price: 1249.95,
     date: "November 2020",
+    slotsInStock: 3,
   },
   {
     name: "Tropical Intermediate",
@@ -60,6 +65,7 @@ const courses = [
     category: "Intermediate",
     price: 1249.95,
     date: "June 2021",
+    slotsInStock: 3,
   },
   {
     name: "Desert Advanced",
@@ -70,6 +76,7 @@ const courses = [
     category: "Advanced",
     price: 2499.95,
     date: "June 2021",
+    slotsInStock: 3,
   },
   {
     name: "Tundra Advanced",
@@ -80,6 +87,7 @@ const courses = [
     category: "Advanced",
     price: 2499.95,
     date: "December 2020",
+    slotsInStock: 3,
   },
   {
     name: "Tropical Advanced",
@@ -91,6 +99,7 @@ const courses = [
     category: "Advanced",
     price: 2499.95,
     date: "July 2021",
+    slotsInStock: 3,
   },
 ];
 

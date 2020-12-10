@@ -40,6 +40,11 @@ const courseSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    slotsInStock: {
+      type: Number,
+      required: true,
+      default: 1,
+    },
   },
   {
     timestamps: true,
