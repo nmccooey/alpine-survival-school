@@ -1,12 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Row, Col, Image, ListGroup, Card, Button } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  Image,
+  ListGroup,
+  Card,
+  Button,
+  Form,
+} from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listCourseDetails } from "../actions/courseActions";
 
-const CourseScreen = ({ match }) => {
+const CourseScreen = ({ history, match }) => {
+  const [qty, setQty] = useState(1);
+
   const dispatch = useDispatch();
 
   const courseDetails = useSelector((state) => state.courseDetails);
@@ -15,6 +25,10 @@ const CourseScreen = ({ match }) => {
   useEffect(() => {
     dispatch(listCourseDetails(match.params.id));
   }, [dispatch, match]);
+
+  const addToCartHandler = () => {
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
 
   return (
     <>
@@ -64,8 +78,43 @@ const CourseScreen = ({ match }) => {
                     </Row>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    <Button className="btn-block btn-success" type="button">
-                      Sign Up
+                    <Row>
+                      <Col>Status:</Col>
+                      <Col>
+                        {course.slotsInStock > 0
+                          ? "Slots Available"
+                          : "No Slots Available"}
+                      </Col>
+                    </Row>
+                  </ListGroup.Item>
+                  {course.slotsInStock > 0 && (
+                    <ListGroup.Item>
+                      <Row>
+                        <Col>Qty</Col>
+                        <Col>
+                          <Form.Control
+                            as="select"
+                            value={qty}
+                            onChange={(e) => setQty(e.target.value)}
+                          >
+                            {[...Array(course.slotsInStock).keys()].map((x) => (
+                              <option key={x + 1} value={x + 1}>
+                                {x + 1}
+                              </option>
+                            ))}
+                          </Form.Control>
+                        </Col>
+                      </Row>
+                    </ListGroup.Item>
+                  )}
+                  <ListGroup.Item>
+                    <Button
+                      onClick={addToCartHandler}
+                      className="btn-block"
+                      type="button"
+                      disabled={course.slotsInStock === 0}
+                    >
+                      Add Course To Cart
                     </Button>
                   </ListGroup.Item>
                 </ListGroup>
