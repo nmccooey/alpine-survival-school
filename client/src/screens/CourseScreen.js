@@ -12,6 +12,7 @@ import {
 } from "react-bootstrap";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 import { listCourseDetails } from "../actions/courseActions";
 
 const CourseScreen = ({ history, match }) => {
@@ -32,6 +33,7 @@ const CourseScreen = ({ history, match }) => {
 
   return (
     <>
+      <Meta title={course.name} />
       <Link className="btn btn-dark my-3" to="/">
         Go Back
       </Link>

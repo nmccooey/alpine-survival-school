@@ -5,6 +5,7 @@ import { Row, Col } from "react-bootstrap";
 import Course from "../components/Course";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Meta from "../components/Meta";
 
 const HomeScreen = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Meta />
       <h1>Our Courses</h1>
       {loading ? (
         <Loader />
